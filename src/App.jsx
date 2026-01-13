@@ -5,7 +5,7 @@ import HomePage from './pages/HomePage'
 import LikePage from './pages/LikePage'
 import CardPage from './pages/CardPage'
 import SinglePage from './pages/SinglePage'
-import Products from './pages/products'
+import Products from './pages/Products'
 
 const App = () => {
   return (
