@@ -5,8 +5,12 @@ import { Link } from "react-router-dom";
 import { FiSearch, FiShoppingCart } from "react-icons/fi";
 import { AiOutlineHeart, AiOutlineUser } from "react-icons/ai";
 import { HiBars3 } from "react-icons/hi2";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+
+    const cart = useSelector((state) => state.cart)
+
     const [language, setLanguage] = useState("Eng");
     const [currency, setCurrency] = useState("USD");
     const [hideTopBar, setHideTopBar] = useState(false);
@@ -121,7 +125,7 @@ const Header = () => {
                     </div>
 
                     <div className="hidden lg:flex gap-5 text-white text-[29px]">
-                        <Link to="/cart"><FiShoppingCart /></Link>
+                        <Link className="relative" to="/cart"><FiShoppingCart /><span className="bg-black text-white text-[14px] px-[5px] rounded-[50%] absolute top-[-10px] left-[25px]">{cart?.length}</span></Link>
                         <Link to="/like"><AiOutlineHeart /></Link>
                         <Link to="/register"><AiOutlineUser /></Link>
                     </div>
